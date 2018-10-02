@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Project_Name: lazydsr-platform
  * Package_Name: com.lazydsr.platform.restful
  *
- * @Author: lazydsr
- * @Date: 2018/10/03 00:46
- * @Version: 1.0
+ * Author: lazydsr
+ * Date: 2018/10/03 00:46
+ * Version: 1.0
  * Info: @TODO:...
  */
 @SpringBootApplication
