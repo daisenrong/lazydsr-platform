@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lazydsr.platform</groupId>
+    <artifactId>lazydsr-platform</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+
+    <version>1.0</version>
+
+    <modules>
+        <module>lazydsr-platform-dao</module>
+        <module>lazydsr-platform-service</module>
+        <module>lazydsr-platform-api</module>
+        <module>lazydsr-platform-restful</module>
+        <module>lazydsr-platform-controller</module>
+        <module>lazydsr-platform-all</module>
+        <module>lazydsr-platform-entity</module>
+        <module>lazydsr-platform-dto</module>
+    </modules>
+
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+
+        <!--项目模块版本-->
+        <lazydsr-platform-version>${project.version}</lazydsr-platform-version>
+
+        <!--其他依赖版本-->
+        <spring-boot-version>2.0.2.RELEASE</spring-boot-version>
+
+        <dubbo-version>2.6.2</dubbo-version>
+
+        <spring-kafka-version>2.1.10.RELEASE</spring-kafka-version>
+
+        <mysql-connector-java-version>5.1.46</mysql-connector-java-version>
+
+        <druid-spring-boot-starter-version>1.1.10</druid-spring-boot-starter-version>
+
+        <spring-boot-starter-redis-version>1.4.7.RELEASE</spring-boot-starter-redis-version>
+
+        <lombok-version>1.16.20</lombok-version>
+
+        <junit-version>4.12</junit-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--项目模块-->
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-all</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-api</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-controller</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-dao</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-dto</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-entity</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-restful</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazydsr.platform</groupId>
+                <artifactId>lazydsr-platform-service</artifactId>
+                <version>${lazydsr-platform-version}</version>
+            </dependency>
+
+
+            <!--非项目模块-->
+            <!--spring-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+
+            <!--RPC-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo-version}</version>
+            </dependency>
+
+            <!--消息队列-->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka-version}</version>
+            </dependency>
+            <!--<dependency>-->
+            <!--<groupId>org.springframework.integration</groupId>-->
+            <!--<artifactId>spring-integration-kafka</artifactId>-->
+            <!--<version>3.0.3.RELEASE</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>org.apache.kafka</groupId>-->
+            <!--<artifactId>kafka-clients</artifactId>-->
+            <!--<version>2.0.0</version>-->
+            <!--</dependency>-->
+
+
+            <!--数据库连接-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java-version}</version>
+            </dependency>
+            <!--数据库连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter-version}</version>
+            </dependency>
+
+            <!--缓存-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+                <version>${spring-boot-starter-redis-version}</version>
+            </dependency>
+
+
+            <!--辅助工具-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
