@@ -1,21 +1,21 @@
-package com.lazydsr.platform.service;
+package com.lazydsr.platform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * FileName: AppService
+ * FileName: AppRestful
  * Project_Name: lazydsr-platform
- * Package_Name: com.lazydsr.platform.service
+ * Package_Name: com.lazydsr.platform.restful
  *
  * Author: lazydsr
- * Date: 2018/10/03 00:47
+ * Date: 2018/10/03 00:46
  * Version: 1.0
  * Info: @TODO:...
  */
 @SpringBootApplication
-public class AppService {
+public class AppRestful {
     public static void main(String[] args) {
-        SpringApplication.run(AppService.class, args);
+        SpringApplication.run(AppRestful.class, args);
     }
 }
