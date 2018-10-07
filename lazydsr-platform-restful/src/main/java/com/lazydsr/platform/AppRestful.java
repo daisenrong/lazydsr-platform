@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * FileName: AppRestful
  * Project_Name: lazydsr-platform
- * Package_Name: com.lazydsr.platform.restful
+ * Package_Name: com.lazydsr.platform.restful.restful
  *
  * Author: lazydsr
  * Date: 2018/10/03 00:46

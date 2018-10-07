@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -74,6 +74,38 @@ spring:
         login-password: admin
         allow:
         deny:
+  kafka:
+    # kafka服务器地址(可以多个)
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      # 指定一个默认的组名
+      group-id: lazydsr-platform-consumer
+      # earliest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费
+      # latest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
+      # none:topic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的offset，则抛出异常
+      auto-offset-reset: earliest
+      # key/value的反序列化
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 50
+      enable-auto-commit: false
+#      auto-commit-interval:
+    producer:
+      # key/value的序列化
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # 批量抓取
+      batch-size: 65536
+      # 缓存容量
+      buffer-memory: 524288
+      retries: 1
+    #      # 服务器地址
+    #      bootstrap-servers: 127.0.0.1:9092
+    listener:
+      type: batch
+      ack-mode: manual_immediate
+    template:
+      default-topic: lazydsr-platform
 
   # 设置cglib代理模式，防止非接口代理出错
   aop:

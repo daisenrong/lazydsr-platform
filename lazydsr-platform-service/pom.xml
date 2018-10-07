@@ -28,6 +28,19 @@
             <groupId>com.lazydsr.platform</groupId>
             <artifactId>lazydsr-platform-api</artifactId>
         </dependency>
+
+        <!--非项目模块-->
+        <!--kafka-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${spring-kafka-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
